@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/Users/aleksandergajowniczek/Documents/Studia/SEMESTR VI/PAINT/football-stats-app/backend/env/bin/python3" "$0" "$@"
-' '''
+#!/Users/aleksandergajowniczek/Documents/Studia/SEMESTR_VI/PAINT/football-stats-app/backend/env/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys
