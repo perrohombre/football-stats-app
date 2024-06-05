@@ -1,0 +1,26 @@
+# Ignore the .env file where sensitive information is stored
+.env
+
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Ignore environment directories
+env/
+venv/
+ENV/
+.venv/
+
+# Ignore Django migrations
+*/migrations/*
+
+# Ignore node_modules folder
+node_modules/
+
+# Ignore build directory
+build/
+
+# Ignore other files and directories you don't want to include
+.DS_Store
+*.log
+*.sqlite3
