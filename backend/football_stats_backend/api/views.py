@@ -37,6 +37,4 @@ def top_assistants_view(request, league_id, season):
     }
     response = requests.get(url, headers=headers)
     data = response.json()
-    print(settings.APISPORTS_KEY)
-    print(settings.RAPIDAPI_KEY)
     return JsonResponse(data)
