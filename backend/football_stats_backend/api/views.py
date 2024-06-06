@@ -18,7 +18,7 @@ def get_leagues_and_seasons(request):
         data_ids = json.load(f)
 
     leagues = [{"id": item["id"], "name": item["name"], "country": item["country"]} for item in data_ids]
-    seasons = list(range(2000, 2025))
+    seasons = list(range(2000, 2024))
     return JsonResponse({"leagues": leagues, "seasons": seasons})
 
 def top_scorers_view(request, league_id, season):
