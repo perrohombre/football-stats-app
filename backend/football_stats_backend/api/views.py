@@ -10,15 +10,18 @@ def league_table_view(request, league_id, season):
         "X-RapidAPI-Key": settings.RAPIDAPI_KEY
     }
     response = requests.get(url, headers=headers)
-    data = response.json()
+    try:
+        data = response.json()
+    except ValueError:
+        return JsonResponse({'error': 'Invalid JSON response from external API'}, status=500)
     return JsonResponse(data)
 
 def get_leagues_and_seasons(request):
-    with open('/Users/aleksandergajowniczek/Documents/Studia/SEMESTR_VI/PAINT/football-stats-app/ids.json') as f:
+    with open('/Users/aleksandergajowniczek/Documents/Studia/SEMESTR_VI/PAINT/football-stats-app/backend/ids.json') as f:
         data_ids = json.load(f)
 
     leagues = [{"id": item["id"], "name": item["name"], "country": item["country"]} for item in data_ids]
-    seasons = list(range(2000, 2024))
+    seasons = list(range(2010, 2024))
     return JsonResponse({"leagues": leagues, "seasons": seasons})
 
 def top_scorers_view(request, league_id, season):
@@ -27,7 +30,10 @@ def top_scorers_view(request, league_id, season):
         "x-apisports-key": settings.APISPORTS_KEY
     }
     response = requests.get(url, headers=headers)
-    data = response.json()
+    try:
+        data = response.json()
+    except ValueError:
+        return JsonResponse({'error': 'Invalid JSON response from external API'}, status=500)
     return JsonResponse(data)
 
 def top_assistants_view(request, league_id, season):
@@ -36,5 +42,8 @@ def top_assistants_view(request, league_id, season):
         "x-apisports-key": settings.APISPORTS_KEY
     }
     response = requests.get(url, headers=headers)
-    data = response.json()
+    try:
+        data = response.json()
+    except ValueError:
+        return JsonResponse({'error': 'Invalid JSON response from external API'}, status=500)
     return JsonResponse(data)

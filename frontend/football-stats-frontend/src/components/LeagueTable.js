@@ -8,6 +8,7 @@ const LeagueTable = () => {
     const [scorers, setScorers] = useState([]);
     const [assistants, setAssistants] = useState([]);
     const [loading, setLoading] = useState(true);
+    const defaultImage = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray" width="48px" height="48px"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>';
 
     useEffect(() => {
         const fetchTable = async () => {
@@ -36,6 +37,12 @@ const LeagueTable = () => {
         fetchAssistants();
         setLoading(false);
     }, [leagueId, season]);
+
+    const handleImageError = (event) => {
+        event.target.src = defaultImage + '?timestamp=' + new Date().getTime();
+        event.target.style.backgroundColor = 'white';
+        event.target.style.border = '1px solid #ddd';
+    };
 
     if (loading) {
         return <div>Loading...</div>;
@@ -80,7 +87,12 @@ const LeagueTable = () => {
                         <tr key={index}>
                             <td style={{ border: '1px solid #ddd', padding: '8px' }}>{team.rank}</td>
                             <td style={{ border: '1px solid #ddd', padding: '8px' }}>
-                                <img src={team.team.logo} alt={team.team.name} style={{ width: '30px', height: '30px', marginRight: '8px', backgroundColor: 'white' }} onError={(e) => {e.target.src = ''; e.target.style.backgroundColor = 'white'; e.target.style.border = '1px solid #ddd';}} />
+                                <img 
+                                    src={team.team.logo} 
+                                    alt={team.team.name} 
+                                    style={{ width: '30px', height: '30px', marginRight: '8px', backgroundColor: 'white' }} 
+                                    onError={handleImageError}
+                                />
                                 {team.team.name}
                             </td>
                             <td style={{ border: '1px solid #ddd', padding: '8px' }}>{team.points}</td>
@@ -111,11 +123,21 @@ const LeagueTable = () => {
                         <tr key={scorer.player.id}>
                             <td style={{ border: '1px solid #ddd', padding: '8px' }}>{index + 1}</td>
                             <td style={{ border: '1px solid #ddd', padding: '8px' }}>
-                                <img src={scorer.player.photo} alt={scorer.player.name} style={{ width: '30px', height: '30px', marginRight: '8px', backgroundColor: 'white' }} onError={(e) => {e.target.src = ''; e.target.style.backgroundColor = 'white'; e.target.style.border = '1px solid #ddd';}} />
+                                <img 
+                                    src={scorer.player.photo} 
+                                    alt={scorer.player.name} 
+                                    style={{ width: '30px', height: '30px', marginRight: '8px', backgroundColor: 'white' }} 
+                                    onError={handleImageError}
+                                />
                                 {scorer.player.name}
                             </td>
                             <td style={{ border: '1px solid #ddd', padding: '8px' }}>
-                                <img src={scorer.statistics[0].team.logo} alt={scorer.statistics[0].team.name} style={{ width: '30px', height: '30px', marginRight: '8px', backgroundColor: 'white' }} onError={(e) => {e.target.src = ''; e.target.style.backgroundColor = 'white'; e.target.style.border = '1px solid #ddd';}} />
+                                <img 
+                                    src={scorer.statistics[0].team.logo} 
+                                    alt={scorer.statistics[0].team.name} 
+                                    style={{ width: '30px', height: '30px', marginRight: '8px', backgroundColor: 'white' }} 
+                                    onError={handleImageError}
+                                />
                                 {scorer.statistics[0].team.name}
                             </td>
                             <td style={{ border: '1px solid #ddd', padding: '8px' }}>{scorer.statistics[0].goals.total}</td>
@@ -123,6 +145,7 @@ const LeagueTable = () => {
                     ))}
                 </tbody>
             </table>
+
 
             <h2>Top Assistants</h2>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -139,11 +162,21 @@ const LeagueTable = () => {
                         <tr key={assistant.player.id}>
                             <td style={{ border: '1px solid #ddd', padding: '8px' }}>{index + 1}</td>
                             <td style={{ border: '1px solid #ddd', padding: '8px' }}>
-                                <img src={assistant.player.photo} alt={assistant.player.name} style={{ width: '30px', height: '30px', marginRight: '8px', backgroundColor: 'white' }} onError={(e) => {e.target.src = ''; e.target.style.backgroundColor = 'white'; e.target.style.border = '1px solid #ddd';}} />
+                                <img 
+                                    src={assistant.player.photo} 
+                                    alt={assistant.player.name} 
+                                    style={{ width: '30px', height: '30px', marginRight: '8px' }} 
+                                    onError={handleImageError} 
+                                />
                                 {assistant.player.name}
                             </td>
                             <td style={{ border: '1px solid #ddd', padding: '8px' }}>
-                                <img src={assistant.statistics[0].team.logo} alt={assistant.statistics[0].team.name} style={{ width: '30px', height: '30px', marginRight: '8px', backgroundColor: 'white' }} onError={(e) => {e.target.src = ''; e.target.style.backgroundColor = 'white'; e.target.style.border = '1px solid #ddd';}} />
+                                <img 
+                                    src={assistant.statistics[0].team.logo} 
+                                    alt={assistant.statistics[0].team.name} 
+                                    style={{ width: '30px', height: '30px', marginRight: '8px' }} 
+                                    onError={handleImageError} 
+                                />
                                 {assistant.statistics[0].team.name}
                             </td>
                             <td style={{ border: '1px solid #ddd', padding: '8px' }}>{assistant.statistics[0].goals.assists}</td>
