@@ -17,7 +17,7 @@ def league_table_view(request, league_id, season):
     return JsonResponse(data)
 
 def get_leagues_and_seasons(request):
-    with open('/Users/aleksandergajowniczek/Documents/Studia/SEMESTR_VI/PAINT/football-stats-app/backend/ids.json') as f:
+    with open('/app/backend/ids.json') as f:
         data_ids = json.load(f)
 
     leagues = [{"id": item["id"], "name": item["name"], "country": item["country"]} for item in data_ids]

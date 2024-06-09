@@ -9,9 +9,8 @@ services:
       - ./frontend:/app/frontend
     ports:
       - "8000:8000"
-    environment:
-      DJANGO_SETTINGS_MODULE: football_stats_backend.settings
-      PYTHONUNBUFFERED: 1
+    env_file:
+      - .env
 
   frontend:
     build:
