@@ -7,6 +7,7 @@ const Home = () => {
   const [seasons, setSeasons] = useState([]);
   const [selectedLeague, setSelectedLeague] = useState("");
   const [selectedSeason, setSelectedSeason] = useState("");
+  const [searchTerm, setSearchTerm] = useState(""); // State for search term
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -38,6 +39,12 @@ const Home = () => {
     }
   };
 
+  // Filter leagues based on search term
+  const filteredLeagues = leagues.filter(league =>
+    league.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    league.country.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -51,6 +58,17 @@ const Home = () => {
       <h1 style={styles.header}>Select League and Season</h1>
       <form onSubmit={handleSubmit} style={styles.form}>
         <div style={styles.formGroup}>
+          <label htmlFor="league-search" style={styles.label}>Search League or Country</label>
+          <input
+            type="text"
+            id="league-search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            style={styles.input}
+            placeholder="Search leagues or countries..."
+          />
+        </div>
+        <div style={styles.formGroup}>
           <label htmlFor="league" style={styles.label}>League</label>
           <select
             id="league"
@@ -59,7 +77,7 @@ const Home = () => {
             style={styles.select}
           >
             <option value="">Select League</option>
-            {leagues.map((league) => (
+            {filteredLeagues.map((league) => (
               <option key={league.id} value={league.id}>
                 {league.name} ({league.country})
               </option>
@@ -125,6 +143,13 @@ const styles = {
     fontSize: '18px',
     marginBottom: '8px',
     color: '#495057',
+  },
+  input: {
+    width: '100%',
+    padding: '10px',
+    fontSize: '16px',
+    borderRadius: '4px',
+    border: '1px solid #ced4da',
   },
   select: {
     width: '100%',
