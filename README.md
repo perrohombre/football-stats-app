@@ -16,7 +16,7 @@ Opis: Aplikacja jest podzielona na dwa oddzielne kontenery – jeden dla fronten
 Instrukcja uruchomienia projektu
 
 Klonowanie repozytorium:
-git clone https://github.com/perrohombre/football-stats-app
+git clone https://github.com/perrohombre/football-stats-app \n
 cd football-stats-app
 
 Konfiguracja Docker Compose:
