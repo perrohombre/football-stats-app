@@ -31,3 +31,9 @@ Celem projektu jest stworzenie aplikacji webowej, która umożliwia przeglądani
 ### Konfiguracja Docker Compose
 Upewnij się, że masz zainstalowany Docker oraz Docker Compose.
 W pliku docker-compose.yml znajdują się konfiguracje dla obu kontenerów (frontend i backend).
+
+### Uruchomienie kontenerów
+- docker-compose up --build
+Ta komenda zbuduje obrazy Docker oraz uruchomi oba kontenery. Aplikacja będzie dostępna pod adresem http://localhost:3000 (frontend) oraz http://localhost:8000 (backend).
+
+
