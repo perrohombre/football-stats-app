@@ -115,13 +115,15 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     height: '100vh',
-    backgroundColor: '#f8f9fa',
+    backgroundImage: 'url(/background.jpg)', // Update this line
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
     padding: '20px',
   },
   header: {
     fontSize: '36px',
     marginBottom: '20px',
-    color: '#343a40',
+    color: '#fff',
   },
   form: {
     display: 'flex',
@@ -129,7 +131,7 @@ const styles = {
     alignItems: 'center',
     width: '100%',
     maxWidth: '500px',
-    backgroundColor: '#ffffff',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)', // Make form background semi-transparent
     padding: '20px',
     borderRadius: '8px',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
