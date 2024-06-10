@@ -28,3 +28,7 @@ Celem projektu jest stworzenie aplikacji webowej, która umożliwia przeglądani
 ```bash
 git clone https://github.com/perrohombre/football-stats-app
 cd football-stats-app
+
+### Konfiguracja Docker Compose
+Upewnij się, że masz zainstalowany Docker oraz Docker Compose.
+W pliku docker-compose.yml znajdują się konfiguracje dla obu kontenerów (frontend i backend).
