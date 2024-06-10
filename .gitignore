@@ -2,6 +2,12 @@
 __pycache__/
 *.py[cod]
 
+# Ignore environment directories
+env/
+venv/
+ENV/
+.venv/
+
 # Ignore Django migrations
 */migrations/*
 
