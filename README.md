@@ -25,8 +25,8 @@ Celem projektu jest stworzenie aplikacji webowej, która umożliwia przeglądani
 ## Instrukcja uruchomienia projektu
 
 ### Klonowanie repozytorium
-git clone https://github.com/perrohombre/football-stats-app
-cd football-stats-app
+- git clone https://github.com/perrohombre/football-stats-app
+- cd football-stats-app
 
 ### Konfiguracja Docker Compose
 Upewnij się, że masz zainstalowany Docker oraz Docker Compose.
