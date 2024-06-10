@@ -1,15 +1,6 @@
-# Ignore the .env file where sensitive information is stored
-.env
-
 # Ignore Python bytecode files
 __pycache__/
 *.py[cod]
-
-# Ignore environment directories
-env/
-venv/
-ENV/
-.venv/
 
 # Ignore Django migrations
 */migrations/*
