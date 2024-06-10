@@ -34,6 +34,6 @@ W pliku docker-compose.yml znajdują się konfiguracje dla obu kontenerów (fron
 
 ### Uruchomienie kontenerów
 - docker-compose up --build
-Ta komenda zbuduje obrazy Docker oraz uruchomi oba kontenery. Aplikacja będzie dostępna pod adresem http://localhost:3000 (frontend) oraz http://localhost:8000 (backend).
+- Ta komenda zbuduje obrazy Docker oraz uruchomi oba kontenery. Aplikacja będzie dostępna pod adresem http://localhost:3000 (frontend) oraz http://localhost:8000 (backend).
 
 
