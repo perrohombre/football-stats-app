@@ -25,7 +25,6 @@ Celem projektu jest stworzenie aplikacji webowej, która umożliwia przeglądani
 ## Instrukcja uruchomienia projektu
 
 ### Klonowanie repozytorium
-```bash
 git clone https://github.com/perrohombre/football-stats-app
 cd football-stats-app
 
