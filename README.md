@@ -1,39 +1,40 @@
-# Aplikacja webowa do przeglądania lig piłkarskich i statystyk zawodników
+# Web Application for Viewing Football Leagues and Player Statistics
 
-## Technologie
+## Technologies
 - **Backend:** Django
 - **Frontend:** React
-- **Konteneryzacja:** Docker, Docker Compose
+- **Containerization:** Docker, Docker Compose
 
-## Cel
-Celem projektu jest stworzenie aplikacji webowej, która umożliwia przeglądanie lig piłkarskich oraz statystyk zawodników, takich jak liczba bramek i asyst.
+## Purpose
+The purpose of this project is to create a web application that allows users to view football leagues and player statistics, such as the number of goals and assists.
 
-## Struktura projektu
+## Project Structure
 
 ### Backend
-- **Technologia:** Django
-- **Opis:** Backend aplikacji jest odpowiedzialny za zarządzanie bazą danych, logiką biznesową oraz udostępnianie API dla frontendu.
+- **Technology:** Django
+- **Description:** The backend of the application is responsible for managing the database, business logic, and providing the API for the frontend.
 
 ### Frontend
-- **Technologia:** React
-- **Opis:** Frontend aplikacji jest odpowiedzialny za interfejs użytkownika oraz komunikację z backendem za pośrednictwem API.
+- **Technology:** React
+- **Description:** The frontend of the application is responsible for the user interface and communicating with the backend via the API.
 
-### Konteneryzacja
-- **Technologie:** Docker, Docker Compose
-- **Opis:** Aplikacja jest podzielona na dwa oddzielne kontenery – jeden dla frontendu i jeden dla backendu. Docker Compose jest używany do zarządzania wieloma kontenerami.
+### Containerization
+- **Technologies:** Docker, Docker Compose
+- **Description:** The application is divided into two separate containers – one for the frontend and one for the backend. Docker Compose is used to manage multiple containers.
 
-## Instrukcja uruchomienia projektu
+## Project Setup Instructions
 
-### Klonowanie repozytorium
+### Cloning the Repository
 - git clone https://github.com/perrohombre/football-stats-app
 - cd football-stats-app
 
-### Konfiguracja Docker Compose
-Upewnij się, że masz zainstalowany Docker oraz Docker Compose.
-W pliku docker-compose.yml znajdują się konfiguracje dla obu kontenerów (frontend i backend).
+### Docker Compose Configuration
+Ensure that Docker and Docker Compose are installed.
+The docker-compose.yml file contains configurations for both containers (frontend and backend).
 
-### Uruchomienie kontenerów
+### Starting the Containers
 - docker-compose up --build
-- Ta komenda zbuduje obrazy Docker oraz uruchomi oba kontenery. Aplikacja będzie dostępna pod adresem http://localhost:3000.
+- This command will build the Docker images and start both containers. The application will be available at http://localhost:3000.
 
-
+## Note
+This is a project for university studies.
